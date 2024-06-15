@@ -1,0 +1,42 @@
+class Student:
+    def __init__(self):
+        self.Name=None
+        self.Usn=None
+        self.Marks=[]
+        self.Percent=None
+        self.Grade=None
+        
+    def stdInput(self):
+        self.Name=input("enter the name")
+        self.Usn=input('enter the usn')
+        for i in range(0,5):
+            marks=int(input(f"enter the marks sub{i+1}:"))
+            self.Marks.append(marks)
+            
+    def calculatePercent(self):
+        self.Percent=sum(self.Marks)/5
+      
+    def assignGrade(self):
+        if 100>=self.Percent and 70<self.Percent:
+            self.Grade='a'
+        elif 70>=self.Percent and 50<self.Percent:
+            self.Grade='b'
+        else:
+            self.Grade='c'
+    
+    def display(self):
+        print("Name:",self.Name)
+        print("Usn:",self.Usn)
+        print("Marks:",*self.Marks)
+        print("Percent:",self.Percent)
+        print("Grade:",self.Grade)
+        
+s=Student()
+s.stdInput()
+s.calculatePercent()
+s.assignGrade()
+s.display()
+
+        
+            
+            
