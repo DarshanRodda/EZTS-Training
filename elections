@@ -1,0 +1,33 @@
+votes=[]
+cand_votes=[0,0,0,0]
+party=['bjp','congress','tdp','samajvadi']
+voters=int(input("enter the voters"))
+for i in range(0,voters):
+    print("electronic voting machine")
+    print('''candidates:
+    1.bjp
+    2.congress
+    3.tdp
+    4.samajvadi''')
+    vote=int(input("enter your vote"))
+    votes.append(vote)
+print("elections results")
+print(votes)
+for i in votes:
+    cand_votes[i-1]=cand_votes[i-1]+1
+    print(cand_votes)
+    
+win_mem=cand_votes.count(max(cand_votes))
+if win_mem>1:
+    print("colition occurs")
+    for i in range(0,len(cand_votes)):
+        if max(cand_votes)==cand_votes[i]:
+            print(party[i])
+else:
+    print("party winner")
+    print(party[cand_votes.index(max(cand_votes))])
+    
+
+     
+    
+
