@@ -1,0 +1,19 @@
+expression=input("enter the mathematical expression")
+stack=[]
+
+for i in expression:
+    if i=='(' or i=='{'or i=='[':
+        stack.append(i)
+    elif (i=='}' or i==']' or i==')') and len(stack)==0:
+        stack.append(i)
+    elif i==')' and stack[-1]=='(':
+        stack.pop()
+    elif i==']' and stack[-1]=='[':
+        stack.pop()
+    elif i=='}' and stack[-1]=='{':
+        stack.pop()
+
+if len(stack)==0:
+    print("valid expression")
+else:
+    print("Invalid expression")
