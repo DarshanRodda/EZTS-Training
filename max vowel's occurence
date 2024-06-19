@@ -1,0 +1,21 @@
+string=input("enter the string")
+string.lower()
+vowels={
+    'a':0,
+    'e':0,
+    'i':0,
+    'o':0,
+    'u':0
+}
+def maxVowels(string):
+    vowels['a']=string.count('a')
+    vowels['e']=string.count('e')
+    vowels['i']=string.count('i')
+    vowels['o']=string.count('o')
+    vowels['u']=string.count('u')
+    maxCount=max(vowels.values())
+    for key,value in vowels.items():
+        if value==maxCount:
+            return key,value
+result=(maxVowels(string))
+print(result[0]," : ",result[1])
