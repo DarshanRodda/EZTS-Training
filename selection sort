@@ -1,0 +1,10 @@
+l=[9,5,8,10,26,44,3,1]
+
+for j in range(len(l) - 1):
+    min_index = j
+    for i in range(j + 1, len(l)):
+        if l[i] < l[min_index]:
+            min_index = i
+    l[j], l[min_index] = l[min_index], l[j]
+print(l)
+    
