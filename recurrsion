@@ -1,0 +1,15 @@
+def printNumber(num):
+    if num>0:
+        print(num)
+        printNumber(num-1)
+printNumber(10)
+
+def fibo(num):
+    if num==0:
+        return 0
+    elif num==1:
+        return 1
+    else:
+        res=(fibo(num-1)+fibo(num-2))
+        print(res)
+print(fibo(3))
