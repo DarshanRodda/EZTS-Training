@@ -1,0 +1,13 @@
+list1 = [1, 2, 3, 4, 5]
+max_sum = 0
+num = int(input("Enter the number you want to consider consecutive: "))
+cons = []
+
+for i in range(len(list1) - num + 1):
+    current_sum = sum(list1[i:i + num])
+    if current_sum > max_sum:
+        max_sum = current_sum
+        cons = list1[i:i + num]
+
+print("Consecutive numbers with the highest sum:", cons)
+print("Maximum sum:", max_sum)
