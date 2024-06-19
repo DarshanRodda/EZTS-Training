@@ -1,0 +1,22 @@
+
+def divide(l,low,high):
+    j=low-1
+    pi=high
+    for i in range(low,high):
+        if l[i]<l[pi]:
+            j+=1
+            l[i],l[j]=l[j],l[i]
+    j+=1
+    l[high],l[j]=l[j],l[high]
+    return j
+
+def Quick(l,low,high):
+    if low<high:
+        pi=divide(l,low,high)
+        Quick(l,low,pi-1)
+        Quick(l,pi+1,high)
+        
+if __name__=="__main__":
+    l=[1,5,8,10,26,44,3,9]
+    Quick(l,0,len(l)-1)
+    print(l)
