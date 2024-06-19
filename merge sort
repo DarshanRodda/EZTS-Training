@@ -1,0 +1,25 @@
+def merge(left,right):
+    i=j=0
+    result=[]
+    while i<len(left) and j<len(right):
+        if left[i]<right[j]:
+            result.append(left[i])
+            i+=1
+        else:
+            result.append(right[j])
+            j+=1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+def mergeSort(l):
+    if len(l)<=1:
+        return l
+    mid=len(l)//2
+    left=mergeSort(l[:mid])
+    right=mergeSort(l[mid:])
+    return merge(left,right)
+
+if __name__=="__main__":
+    l=[1,5,8,10,26,44,3,9]
+    print(mergeSort(l))
