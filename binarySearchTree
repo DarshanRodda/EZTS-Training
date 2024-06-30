@@ -1,0 +1,41 @@
+class Node:
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
+
+def insertBinarySearchTree(root, data):
+    if root is None:
+        root=Node(data)
+    else:
+        if root.data > data:
+            root.left = insertBinarySearchTree(root.left, data)
+        else:
+            root.right = insertBinarySearchTree(root.right, data)
+    return root
+
+def preOrder(root):
+    if root is None:
+        return
+    else:
+        print(root.data, end=' ')
+        preOrder(root.left)
+        preOrder(root.right)
+
+def inOrder(root):
+    if root is None:
+        return 
+    else:
+        inOrder(root.left)
+        print(root.data,end=' ')
+        inOrder(root.right)
+
+
+list1 = [4, 6, 7, 3, 8, 2, 5, 9, 1]
+root = None
+for i in list1:
+    root = insertBinarySearchTree(root, i)
+
+preOrder(root)
+print()
+inOrder(root)
